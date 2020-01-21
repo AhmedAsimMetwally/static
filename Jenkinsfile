@@ -8,7 +8,7 @@ pipeline {
                 echo "Multiline shell steps works too"
                 ls -lsh 
                 '''
-             withAWS(region:'eu-central-1') {
+             withAWS(credentials:'jenkins') {
                 s3Upload(file:'index.html', bucket:'uniquebucket11', path:'index.html')
 
                 }
